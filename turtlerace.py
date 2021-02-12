@@ -1,6 +1,8 @@
 import turtle
 import time
 import random
+import sys
+import datetime
 
 redwin = 0
 orangewin = 0
@@ -11,16 +13,27 @@ magentawin = 0
 purplewin = 0
 blackwin = 0
 
-n = int(input("How many times should the turtles race?: "))
+if len(sys.argv) > 1:
+    n = sys.argv[1]
+else:
+    n = int(input("How many times should the turtles race?: "))
+
+racenum = 1
 
 for i in range(n):
+    timestart = datetime.datetime.now()
     s = turtle.getscreen()
     s.clear()
     t = turtle.Turtle()
 
     t.pencolor("black")
     t.fillcolor("black")
+    t.penup()
     t.speed(10)
+    t.goto(-350,350)
+    t.pendown()
+    t.write(f"Current race number: {racenum}\n", font=("Arial", 8))
+    t.write(f"Total races user entered: {n}", font=("Arial", 8))
     t.penup()
     t.goto(-225,20)
     t.left(90)
@@ -231,6 +244,13 @@ for i in range(n):
         else:
             pass
     turtle1.color('gold')
+    racenum += 1
+    timeend = datetime.datetime.now()
+    timetaken = timeend - timestart
+    t.goto(0,-120)
+    t.pen(pencolor="black", fillcolor="black")
+    t.pendown()
+    t.write(f"Race time in seconds: {timetaken}", align="center", font=("Arial", 12))
     time.sleep(3)
 
     
