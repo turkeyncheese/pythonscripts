@@ -1,2 +1,2 @@
 string = str(input(">> "))
-print("[" + string.replace(" ", "', '",) + "]")
+print("['" + string.replace(" ", "', '",) + "']")
