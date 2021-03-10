@@ -1,8 +1,3 @@
-#Python program to run through all possible combinations of 6 digit numbers
-#It's a little long but I'm sure someone out there can make it shorter or 
-#into a one-liner, ewh, hate those guys...
-
-
 import datetime
 
 code = str(input('Enter a 6-digit code: '))
@@ -25,19 +20,16 @@ for i in range(1, 1000000):
     guess = guess - 1
 
 if guess == code:
-    if guess < 100000:
+    if guess < 100000 and guess > 9999:
         guess = '0' + str(guess)
-    elif guess < 10000:
+    elif guess < 10000 and guess > 999:
         guess = '00' + str(guess)
-    elif guess < 1000:
+    elif guess < 1000 and guess > 99:
         guess = '000' + str(guess)
-    elif guess < 100:
+    elif guess < 100 and guess > 9:
         guess = '0000' + str(guess)
     elif guess < 10:
         guess = '00000' + str(guess)
     end = datetime.datetime.now()
     print('Password is: ' + str(guess))
     print(f'Time taken to brute force: {end - start} seconds')
-else:
-    print('Could not find password.')
-    print('Password was: ' + str(code))
