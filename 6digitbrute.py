@@ -2,10 +2,14 @@ import datetime
 
 code = str(input('Enter a 6-digit code: '))
 
-for char in code:
-    if char not in '1234567890':
-        print(code + ' is not a 6-digit number.')
-        exit()
+if len(code) == 6:
+    for char in code:
+        if char not in '1234567890':
+            print(code + ' is not a 6-digit number.')
+            exit()
+elif len(code) != 6:
+    print(code + ' is not a 6-digit number.')
+    exit()
         
 start = datetime.datetime.now()
 
