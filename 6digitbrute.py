@@ -7,6 +7,11 @@ import datetime
 
 code = str(input('Enter a 6-digit code: '))
 
+for char in code:
+    if char not in '1234567890':
+        print(code + ' is not a 6-digit number.')
+        exit()
+        
 start = datetime.datetime.now()
 
 code = code.lstrip('0')
