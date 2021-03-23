@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 def b_to_d(number):
 	rev = str(number)[::-1]
 	counter = 0
