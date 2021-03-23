@@ -15,19 +15,18 @@ def d_to_b(number):
 	while number > 0:
 		binary += str(number % 2)
 		number = number / 2
-	return binary[::-1]
+	return int(binary[::-1])
 
-print """
-	1. Binary to Decimal Conversion
-	2. Decimal to Binary Conversion\n"""
+print("1. Binary to Decimal Conversion")
+print("2. Decimal to Binary Conversion")
 
-choice = input("Choose conversion type: ")
+choice = int(input("Choose conversion type: "))
 
 if choice == 1:
 	number = input("Number to convert: ")
-	print "Decimal of %s is %s" % (number, b_to_d(number))
+	print(f"Decimal of {number} is {b_to_d(number)}")
 elif choice == 2:
 	number = input("Number to convert: ")
-	print "Binary of %s is %s" % (number, d_to_b(number))
+	print(f"Binary of {number} is {d_to_b(number)}")
 else:
-	print "Invalid Choice"
+	print("Invalid Choice")
