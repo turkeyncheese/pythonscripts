@@ -13,7 +13,7 @@ def random_password(mode, length, amount):
     elif mode == 3:
         characters = string.ascii_letters
     elif mode == 4:
-        characters = string.ascii_letters + string.ascii_punctuation + string.ascii_digits
+        characters = string.ascii_letters + string.punctuation + string.digits
     for i in range(amount):
         print(''.join(random.choice(characters) for i in range(length)))
 
