@@ -1,6 +1,6 @@
 import hashlib
 
-def password_cracker(hash, n):
+def password_cracker(hash, n, show):
     characters = 'abcdefghijklmnopqrstuvwxyz' #or all characters you wish to try
     passwords = []
     for current in range(n):
@@ -12,12 +12,14 @@ def password_cracker(hash, n):
     for word in passwords:
         object = hashlib.md5(word.encode())
         guess = object.hexdigest()
-        print('Trying: ' + word)
+        if show == 'Yes':
+            print('Trying: ' + word)
         if guess == hash:
             password = word
             break
-    print('Password is: ' + str(password))
+    return 'Password is: ' + str(password)
 
-hash = input(str('Enter your MD5 hash: '))
-n = input(int('How long of a password would you like to try?: '))
-password_cracker(hash, n)
+hash = str(input('Enter your MD5 hash: '))
+n = int(input('How long of a password would you like to try?: '))
+show = str(input('Show all passwords? (Yes/No): '))
+print(password_cracker(hash, n, show))
