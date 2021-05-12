@@ -17,3 +17,7 @@ def password_cracker(hash, n):
             password = word
             break
     print('Password is: ' + str(password))
+
+hash = input(str('Enter your MD5 hash: '))
+n = input(int('How long of a password would you like to try?: '))
+password_cracker(hash, n)
