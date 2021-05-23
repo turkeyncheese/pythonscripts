@@ -4,4 +4,4 @@ fizzbuzz=lambda f,b,s:[i%f//2*"Fizz"+i%b//4*"Buzz"or-~i for i in range(s)]
 #For example instead of 3 and 5 you can do 12 and 15.
 
 fizzBuzz=lambda n:'Fizz'*(n%3<1)+'Buzz'*(n%5<1)or"%d"%n
-#Nevermind this is the shortest one. And damn that's awesome.
+#Nevermind this is the shortest one. And damn that's awesome. But it doesn't do all of the iterations it only gets you the nth term in the sequence.
